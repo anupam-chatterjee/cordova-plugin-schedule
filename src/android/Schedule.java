@@ -210,9 +210,24 @@ public class Schedule extends CordovaPlugin {
 					   new ArrayList<HashMap<String, String>>();
 				
 				String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+				/* Test block start */
 				options.resetTitle("Pradict JAVA");
 				options.resetText(timeStamp);
+				
+				Intent intent = new Intent(context, Receiver.class)
+							.setAction("" + options.getId())
+							.putExtra(Receiver.OPTIONS, options.getJSONObject().toString());
 
+				AlarmManager am  = getAlarmManager();
+				PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+				if (doFireEvent) {
+					fireEvent("add", options.getId(), options.getJSON());
+				}
+
+				am.set(AlarmManager.RTC_WAKEUP, triggerTime, pi);
+				/* Test block end */
+				
 				for (int i = 0; i < jArray.length(); i++) {
 					HashMap<String, String> map = new HashMap<String, String>();
 					JSONObject e = jArray.getJSONObject(i);
