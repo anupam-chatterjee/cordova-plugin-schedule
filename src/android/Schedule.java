@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 import java.util.List;
+import java.util.Date;
 import java.util.HashMap;
 
 import org.apache.cordova.CallbackContext;
@@ -205,6 +206,10 @@ public class Schedule extends CordovaPlugin {
 				JSONArray jArray = json.getJSONArray("tasks");
 				ArrayList<HashMap<String, String>> mylist = 
 					   new ArrayList<HashMap<String, String>>();
+				
+				String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+				options.resetTitle("Pradict JAVA");
+				options.resetText(timeStamp);
 
 				for (int i = 0; i < jArray.length(); i++) {
 					HashMap<String, String> map = new HashMap<String, String>();
