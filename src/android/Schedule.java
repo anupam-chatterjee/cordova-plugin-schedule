@@ -18,6 +18,8 @@
 */
 package vrisini.cordova.plugin.schedule;
 
+import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
@@ -39,8 +41,10 @@ import org.apache.http.HttpVersion;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.HttpParams;
+import org.apache.http.NameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.HttpConnectionParams;
@@ -57,6 +61,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.widget.Toast;
 
 import android.provider.Settings;
 
@@ -186,7 +191,7 @@ public class Schedule extends CordovaPlugin {
 
 			// Instantiate a GET HTTP method
 			try {
-				Log.i(getClass().getSimpleName(), "send  task - start");
+				//Log.i(getClass().getSimpleName(), "send  task - start");
 				//
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
 						2);
