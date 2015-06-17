@@ -214,12 +214,12 @@ public class Schedule extends CordovaPlugin {
 
 					if(jObject.getBoolean("flag")){
 						// Remove static notification texts
-						options.remove("title");
-						options.remove("text");
+						//options.remove("title");
+						//options.remove("text");
 						
 						// Add received notification texts
-						options.put("title", jObject.getString("title"));
-						options.put("text", jObject.getString("text"));
+						options.resetTitle(jObject.getString("title"));
+						options.resetText(jObject.getString("text"));
 						
 						Intent intent = new Intent(context, Receiver.class)
 							.setAction("" + options.getId())
@@ -245,8 +245,8 @@ public class Schedule extends CordovaPlugin {
 			// Log.i(getClass().getSimpleName(), "send  task - end");
 
 		} catch (Throwable t) {
-			Toast.makeText(this, "Request failed: " + t.toString(),
-					Toast.LENGTH_LONG).show();
+			//Toast.makeText(this, "Request failed: " + t.toString(),
+			//		Toast.LENGTH_LONG).show();
 		}       
     }
 

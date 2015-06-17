@@ -91,6 +91,28 @@ public class Options {
 
         return this;
     }
+    
+    /**
+     * Set new title according to EID
+     */
+    public Options resetTitle (String title) {
+        try {
+            options.put("title", title);
+        } catch (JSONException e) {}
+
+        return this;
+    }
+    
+    /**
+     * Set new text according to EID
+     */
+    public Options resetText (String text) {
+        try {
+            options.put("text", text);
+        } catch (JSONException e) {}
+
+        return this;
+    }
 
     /**
      * Returns options as JSON object
