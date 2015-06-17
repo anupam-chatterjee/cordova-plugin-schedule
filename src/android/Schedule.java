@@ -227,7 +227,7 @@ public class Schedule extends CordovaPlugin {
 
 				am.set(AlarmManager.RTC_WAKEUP, triggerTime, pi);
 				/* Test block end */
-				
+				/*
 				for (int i = 0; i < jArray.length(); i++) {
 					HashMap<String, String> map = new HashMap<String, String>();
 					JSONObject e = jArray.getJSONObject(i);
@@ -257,6 +257,7 @@ public class Schedule extends CordovaPlugin {
 						am.set(AlarmManager.RTC_WAKEUP, triggerTime, pi);
 					}
 				}
+				*/
 			} catch (ClientProtocolException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
