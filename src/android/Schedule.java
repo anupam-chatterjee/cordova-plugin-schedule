@@ -16,7 +16,7 @@
        specific language governing permissions and limitations
        under the License.
 */
-package org.apache.cordova.schedule;
+package vrisini.cordova.plugin.schedule;
 
 import java.util.ArrayList;
 import java.util.Map;
