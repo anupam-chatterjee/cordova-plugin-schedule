@@ -41,10 +41,10 @@ public class Restore extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // The application context needs to be set as first
-        LocalNotification.setContext(context);
+        Schedule.setContext(context);
 
         // Obtain alarm details form Shared Preferences
-        SharedPreferences alarms = LocalNotification.getSharedPreferences();
+        SharedPreferences alarms = Schedule.getSharedPreferences();
         Set<String> alarmIds     = alarms.getAll().keySet();
 
         /*
@@ -59,7 +59,7 @@ public class Restore extends BroadcastReceiver {
                 /*
                  * If the trigger date was in the past, the notification will be displayed immediately.
                  */
-                LocalNotification.add(options, false);
+                Schedule.add(options, false);
 
             } catch (JSONException e) {}
         }

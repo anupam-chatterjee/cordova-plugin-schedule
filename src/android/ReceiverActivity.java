@@ -65,10 +65,10 @@ public class ReceiverActivity extends Activity {
      * Fires the onclick event.
      */
     private void fireClickEvent (Options options) {
-        LocalNotification.fireEvent("click", options.getId(), options.getJSON());
+        Schedule.fireEvent("click", options.getId(), options.getJSON());
 
         if (options.getAutoCancel()) {
-            LocalNotification.fireEvent("cancel", options.getId(), options.getJSON());
+            Schedule.fireEvent("cancel", options.getId(), options.getJSON());
         }
     }
 }

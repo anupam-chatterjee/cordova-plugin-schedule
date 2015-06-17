@@ -76,11 +76,11 @@ public class Receiver extends BroadcastReceiver {
         fireTriggerEvent();
 
         if (options.getInterval() == 0) {
-            LocalNotification.unpersist(options.getId());
+            Schedule.unpersist(options.getId());
         } else if (isFirstAlarmInFuture()) {
             return;
         } else {
-            LocalNotification.add(options.moveDate(), false);
+            Schedule.add(options.moveDate(), false);
         }
 
         Builder notification = buildNotification();
@@ -186,6 +186,6 @@ public class Receiver extends BroadcastReceiver {
      * Fires ontrigger event.
      */
     private void fireTriggerEvent () {
-        LocalNotification.fireEvent("trigger", options.getId(), options.getJSON());
+        Schedule.fireEvent("trigger", options.getId(), options.getJSON());
     }
 }
