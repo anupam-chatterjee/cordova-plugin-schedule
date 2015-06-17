@@ -22,7 +22,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Schedule">
-                <param name="android-package" value="com.phonegap.plugins.Schedule"/>
+                <param name="android-package" value="vrisini.cordova.plugin.schedule"/>
             </feature>
         </config-file>
 
@@ -33,14 +33,14 @@
              * Android notification bar. The notification uses the default notification
              * sound and it vibrates the phone.
             -->
-            <receiver android:name="com.phonegap.plugins.schedule.Receiver" />
+            <receiver android:name="vrisini.cordova.plugin.schedule.Receiver" />
 
             <!--
              * This class is triggered upon reboot of the device. It needs to re-register
              * the alarms with the AlarmManager since these alarms are lost in case of
              * reboot.
              -->
-            <receiver android:name="com.phonegap.plugins.schedule.Restore" >
+            <receiver android:name="vrisini.cordova.plugin.schedule.Restore" >
                 <intent-filter>
                     <action android:name="android.intent.action.BOOT_COMPLETED" />
                 </intent-filter>
@@ -51,7 +51,7 @@
              * The activity calls the background callback and brings the launch inten
              * up to foreground.
             -->
-            <activity android:name="com.phonegap.plugins.schedule.ReceiverActivity" android:launchMode="singleInstance" />
+            <activity android:name="vrisini.cordova.plugin.schedule.ReceiverActivity" android:launchMode="singleInstance" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
