@@ -21,6 +21,8 @@ package vrisini.cordova.plugin.schedule;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
+import java.util.HashMap;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -40,8 +42,12 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.BasicHttpParams;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpProtocolParams;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.impl.client.BasicResponseHandler;
 
 import android.provider.Settings;
 import android.app.AlarmManager;
