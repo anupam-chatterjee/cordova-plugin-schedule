@@ -183,7 +183,7 @@ public class Schedule extends CordovaPlugin {
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
 						2);
 				nameValuePairs.add(new BasicNameValuePair("devid", Schedule.uuid));
-				httppost.setEntity(new UrlEncodedF6+++ormEntity(nameValuePairs));
+				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 				ResponseHandler<String> responseHandler = new BasicResponseHandler();
 				String responseBody = httpclient.execute(httppost, responseHandler);
 				
