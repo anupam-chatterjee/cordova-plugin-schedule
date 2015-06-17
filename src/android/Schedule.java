@@ -27,6 +27,8 @@ import java.util.List;
 import java.util.Date;
 import java.util.HashMap;
 
+import java.text.SimpleDateFormat;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
