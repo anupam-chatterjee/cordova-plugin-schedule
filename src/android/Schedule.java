@@ -119,6 +119,7 @@ public class Schedule extends CordovaPlugin {
         
         if (action.equals("notifygame")) {
 			Log.d("NotifyZone", "Reached 01....");
+            /*
             cordova.getThreadPool().execute( new Runnable() {
                 public void run() {
                     JSONObject arguments = args.optJSONObject(0);
@@ -128,7 +129,7 @@ public class Schedule extends CordovaPlugin {
                     add(options, true);
                 }
             });
-
+			*/
             return true;
         }
 
