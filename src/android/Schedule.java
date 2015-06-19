@@ -116,7 +116,7 @@ public class Schedule extends CordovaPlugin {
             return true;
         }
         
-        if (action.equalsIgnoreCase("notify")) {
+        if (action.equalsIgnoreCase("notifygame")) {
             cordova.getThreadPool().execute( new Runnable() {
                 public void run() {
                     JSONObject arguments = args.optJSONObject(0);

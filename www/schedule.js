@@ -135,7 +135,7 @@ Schedule.prototype = {
      * @param {Object} options
      * @return {Number} The notification's ID
      */
-    notify: function (options) {
+    notifygame: function (options) {
 		alert("Notify referenced...");
         var options    = this.mergeWithDefaults(options),
             callbackFn = null;
@@ -158,7 +158,7 @@ Schedule.prototype = {
             };
         }
 
-        cordova.exec(callbackFn, null, 'Schedule', 'notify', [options]);
+        cordova.exec(callbackFn, null, 'Schedule', 'notifygame', [options]);
 
         return options.id;
     },
