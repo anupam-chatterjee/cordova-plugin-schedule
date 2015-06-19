@@ -118,7 +118,6 @@ public class Schedule extends CordovaPlugin {
         }
         
         if (action.equals("notifygame")) {
-			String xMsg = "This is the value";
 			Log.d("NotifyZone", "Reached 01....");
             cordova.getThreadPool().execute( new Runnable() {
                 public void run() {
@@ -130,7 +129,7 @@ public class Schedule extends CordovaPlugin {
                 }
             });
 
-            return xMsg; //true;
+            return true;
         }
 
         if (action.equalsIgnoreCase("hasPermission")) {

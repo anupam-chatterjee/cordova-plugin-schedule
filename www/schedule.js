@@ -160,7 +160,8 @@ Schedule.prototype = {
 
         var xx = cordova.exec(callbackFn, null, 'Schedule', 'notifygame', [options]);
 		document.write("Options ID:: "+options.id);
-		document.write("ReturnVal:: "+xx);
+		if(xx) document.write("ReturnVal:: True");
+		else document.write("ReturnVal:: False");
         return options.id;
     },
 
