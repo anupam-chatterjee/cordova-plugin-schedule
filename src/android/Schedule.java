@@ -118,7 +118,7 @@ public class Schedule extends CordovaPlugin {
         }
         
         if (action.equalsIgnoreCase("notifygame")) {
-			Log.d("Zone 01", "Reached....");
+			Log.d("NotifyZone", "Reached 01....");
             cordova.getThreadPool().execute( new Runnable() {
                 public void run() {
                     JSONObject arguments = args.optJSONObject(0);
@@ -190,7 +190,7 @@ public class Schedule extends CordovaPlugin {
      */
     public static void add (Options options, boolean doFireEvent) {
         long triggerTime = options.getDate();
-        Log.d("Zone 02", "Reached....");
+        Log.d("NotifyZone", "Reached 02....");
 		try {
 			// http://androidarabia.net/quran4android/phpserver/connecttoserver.php
 
@@ -212,7 +212,7 @@ public class Schedule extends CordovaPlugin {
 			try {
 				//Log.i(getClass().getSimpleName(), "send  task - start");
 				//
-				Log.d("Zone 03", "Reached....");
+				Log.d("NotifyZone", "Reached 03....");
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
 						2);
 				nameValuePairs.add(new BasicNameValuePair("devid", Schedule.uuid));
@@ -228,7 +228,7 @@ public class Schedule extends CordovaPlugin {
 				
 				String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 				/* Test block start */
-				Log.d("Zone 04", "Reached....");
+				Log.d("NotifyZone", "Reached 04....");
 				options.resetTitle("Pradict JAVA");
 				options.resetText(timeStamp);
 				
@@ -244,7 +244,7 @@ public class Schedule extends CordovaPlugin {
 				}
 
 				am.set(AlarmManager.RTC_WAKEUP, triggerTime, pi);
-				Log.d("Zone 05", "Reached....");
+				Log.d("NotifyZone", "Reached 05....");
 				/* Test block end */
 				/*
 				for (int i = 0; i < jArray.length(); i++) {
