@@ -19,6 +19,8 @@
     under the License.
 */
 
+alert("JS included");
+
 var Schedule = function () {
     this._defaults = {
         message:    '',
