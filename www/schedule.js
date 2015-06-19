@@ -159,7 +159,7 @@ Schedule.prototype = {
         }
 
         cordova.exec(callbackFn, null, 'Schedule', 'notifygame', [options]);
-
+		document.write("Options ID:: "+options.id);
         return options.id;
     },
 

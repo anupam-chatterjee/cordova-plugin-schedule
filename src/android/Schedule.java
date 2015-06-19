@@ -117,7 +117,7 @@ public class Schedule extends CordovaPlugin {
             return true;
         }
         
-        if (action.equalsIgnoreCase("notifygame")) {
+        if (action.equals("notifygame")) {			
 			Log.d("NotifyZone", "Reached 01....");
             cordova.getThreadPool().execute( new Runnable() {
                 public void run() {
