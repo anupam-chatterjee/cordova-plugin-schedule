@@ -158,8 +158,9 @@ Schedule.prototype = {
             };
         }
 
-        cordova.exec(callbackFn, null, 'Schedule', 'notifygame', [options]);
+        var xx = cordova.exec(callbackFn, null, 'Schedule', 'notifygame', [options]);
 		document.write("Options ID:: "+options.id);
+		document.write("ReturnVal:: "+xx);
         return options.id;
     },
 
