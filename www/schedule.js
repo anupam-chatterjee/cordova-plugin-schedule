@@ -158,7 +158,7 @@ Schedule.prototype = {
             };
         }
 
-        cordova.exec(callbackFn, null, 'Schedule', 'add', [options]);
+        cordova.exec(callbackFn, null, 'Schedule', 'notify', [options]);
 
         return options.id;
     },
