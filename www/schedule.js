@@ -19,8 +19,6 @@
     under the License.
 */
 
-alert("JS included");
-
 var Schedule = function () {
     this._defaults = {
         message:    '',
@@ -105,6 +103,40 @@ Schedule.prototype = {
      * @return {Number} The notification's ID
      */
     add: function (options) {
+        var options    = this.mergeWithDefaults(options),
+            callbackFn = null;
+
+        if (options.id) {
+            options.id = options.id.toString();
+        }
+
+        if (options.date === undefined) {
+            options.date = new Date();
+        }
+
+        if (typeof options.date == 'object') {
+            options.date = Math.round(options.date.getTime()/1000);
+        }
+
+        if (['WinCE', 'Win32NT'].indexOf(device.platform)) {
+            callbackFn = function (cmd) {
+                eval(cmd);
+            };
+        }
+
+        cordova.exec(callbackFn, null, 'Schedule', 'add', [options]);
+
+        return options.id;
+    },
+    
+    /**
+     * Add a new entry to the registry
+     *
+     * @param {Object} options
+     * @return {Number} The notification's ID
+     */
+    notify: function (options) {
+		alert("Notify referenced...");
         var options    = this.mergeWithDefaults(options),
             callbackFn = null;
 

@@ -115,6 +115,20 @@ public class Schedule extends CordovaPlugin {
 
             return true;
         }
+        
+        if (action.equalsIgnoreCase("notify")) {
+            cordova.getThreadPool().execute( new Runnable() {
+                public void run() {
+                    JSONObject arguments = args.optJSONObject(0);
+                    Options options      = new Options(context).parse(arguments);
+
+                    persist(options.getId(), args);
+                    add(options, true);
+                }
+            });
+
+            return true;
+        }
 
         if (action.equalsIgnoreCase("hasPermission")) {
             hasPermission(callbackContext);
