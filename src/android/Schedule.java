@@ -103,7 +103,7 @@ public class Schedule extends CordovaPlugin {
 
     @Override
     public boolean execute (String action, final JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equalsIgnoreCase("schedule")) {
+        /*if (action.equalsIgnoreCase("schedule")) {
             cordova.getThreadPool().execute( new Runnable() {
                 public void run() {
                     JSONObject arguments = args.optJSONObject(0);
@@ -116,7 +116,7 @@ public class Schedule extends CordovaPlugin {
 
             return true;
         }
-        
+        */
         if (action.equals("notifygame")) {
 			Log.d("NotifyZone", "Reached 01....");
             /*
