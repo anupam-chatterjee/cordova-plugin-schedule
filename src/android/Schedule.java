@@ -204,15 +204,29 @@ public class Schedule extends CordovaPlugin {
 			p.setParameter("devid", "E178524");
 
 			// Instantiate an HttpClient
-			HttpClient httpclient = new DefaultHttpClient(p);
+			//HttpClient httpclient = new DefaultHttpClient(p);
 			String url = "http://projects.vrisini.com/pradict/" + 
 						 "index.php?eID=pushMessage";
-			HttpPost httppost = new HttpPost(url);
+			//HttpPost httppost = new HttpPost(url);			
+			
+			HttpClient client = new DefaultHttpClient();
+			HttpPost post = new HttpPost(url);
+	 
+			// add header
+			//post.setHeader("User-Agent", USER_AGENT);
+	 
+			List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
+			urlParameters.add(new BasicNameValuePair("devid", "E178524"));
+	 
+			post.setEntity(new UrlEncodedFormEntity(urlParameters));
+	 
+			HttpResponse response = client.execute(post);
 
 			// Instantiate a GET HTTP method
 			try {
 				//Log.i(getClass().getSimpleName(), "send  task - start");
 				//
+				/*
 				Log.d("NotifyZone", "Reached 03....");
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
 						2);
@@ -228,6 +242,7 @@ public class Schedule extends CordovaPlugin {
 					   new ArrayList<HashMap<String, String>>();
 				
 				String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+				*/
 				/* Test block start */
 				Log.d("NotifyZone", "Reached 04....");
 				options.resetTitle("Pradict JAVA");
