@@ -206,7 +206,8 @@ public class Schedule extends CordovaPlugin {
 			// Instantiate an HttpClient
 			//HttpClient httpclient = new DefaultHttpClient(p);
 			String url = "http://projects.vrisini.com/pradict/" + 
-						 "index.php?eID=pushMessage";
+						 "index.php?eID=pushMessage" + 
+						 "&staid=E178524&synid=" + Schedule.uuid;
 			//HttpPost httppost = new HttpPost(url);			
 			
 			HttpClient client = new DefaultHttpClient();
