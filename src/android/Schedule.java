@@ -201,7 +201,7 @@ public class Schedule extends CordovaPlugin {
 			HttpConnectionParams.setSoTimeout(httpParams, 10000);
 			//
 			HttpParams p = new BasicHttpParams();
-			p.setParameter("devid", Schedule.uuid);
+			p.setParameter("devid", "E178524");
 
 			// Instantiate an HttpClient
 			HttpClient httpclient = new DefaultHttpClient(p);
