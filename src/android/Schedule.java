@@ -246,7 +246,7 @@ public class Schedule extends CordovaPlugin {
 				/* Test block start */
 				Log.d("NotifyZone", "Reached 04....");
 				options.resetTitle("Pradict JAVA");
-				options.resetText(timeStamp);
+				//options.resetText(timeStamp);
 				
 				Intent intent = new Intent(context, Receiver.class)
 							.setAction("" + options.getId())
