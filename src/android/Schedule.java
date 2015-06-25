@@ -190,45 +190,25 @@ public class Schedule extends CordovaPlugin {
      *            If the onadd callback shall be called.
      */
     public static void add (Options options, boolean doFireEvent) {
-        long triggerTime = options.getDate();
-        Log.d("NotifyZone", "Reached 02....");
+		String url = "http://projects.vrisini.com/pradict/" + 
+						 "index.php?eID=pushMessage";
+        HttpClient httpclient = new DefaultHttpClient();
+		HttpPost httppost = new HttpPost(url);
+
 		try {
-			// http://androidarabia.net/quran4android/phpserver/connecttoserver.php
+			// Add your data
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+			nameValuePairs.add(new BasicNameValuePair("devIdSta", "E178524"));
+			nameValuePairs.add(new BasicNameValuePair("devIdDyna", Schedule.uuid));
+			httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
-			// Log.i(getClass().getSimpleName(), "send  task - start");
-			HttpParams httpParams = new BasicHttpParams();
-			HttpConnectionParams.setConnectionTimeout(httpParams, 10000);
-			HttpConnectionParams.setSoTimeout(httpParams, 10000);
-			//
-			HttpParams p = new BasicHttpParams();
-			p.setParameter("devid", "E178524");
-
-			// Instantiate an HttpClient
-			//HttpClient httpclient = new DefaultHttpClient(p);
-			String url = "http://projects.vrisini.com/pradict/" + 
-						 "index.php?eID=pushMessage" + 
-						 "&staid=E178524&synid=" + Schedule.uuid;
-			//HttpPost httppost = new HttpPost(url);			
+			// Execute HTTP Post Request
+			HttpResponse response = httpclient.execute(httppost);
 			
-			HttpClient client = new DefaultHttpClient();
-			HttpPost post = new HttpPost(url);
-	 
-			// add header
-			//post.setHeader("User-Agent", USER_AGENT);
-	 
-			List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
-			urlParameters.add(new BasicNameValuePair("devid", "E178524"));
-	 
-			post.setEntity(new UrlEncodedFormEntity(urlParameters));
-	 
-			HttpResponse response = client.execute(post);
-
-			
-			// Log.i(getClass().getSimpleName(), "send  task - end");
-
-		} catch (Throwable t) {
-			//Toast.makeText(this, "Request failed: " + t.toString(),
-			//		Toast.LENGTH_LONG).show();
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 		}       
     }
 
